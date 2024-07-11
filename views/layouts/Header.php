@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
     <title>Site de News</title>
+    <style>
+        header .navigation li a {
+            background-color: transparent !important;
+        }
+        header .navigation li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <header>

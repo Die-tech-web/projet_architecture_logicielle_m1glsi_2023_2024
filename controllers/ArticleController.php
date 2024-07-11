@@ -15,6 +15,7 @@ class ArticleController {
         $articlesPerPage = 5;
         $offset = ($page - 1) * $articlesPerPage;
 
+        // Appel de la méthode getArticles
         $articles = $this->articleModel->getArticles($offset, $articlesPerPage);
         $totalArticles = $this->articleModel->countArticles();
         $hasMorePages = $totalArticles > $offset + $articlesPerPage;

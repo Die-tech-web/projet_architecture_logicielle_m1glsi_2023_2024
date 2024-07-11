@@ -1,6 +1,6 @@
 <?php include 'views/layouts/header.php'; ?>
 <div class="container">
-    <h2>Ajouter / Modifier une catégorie</h2>
+    <h2>Ajouter une catégorie</h2>
     <form action="" method="POST">
         <div class="form-group">
             <label for="nom">Nom :</label>

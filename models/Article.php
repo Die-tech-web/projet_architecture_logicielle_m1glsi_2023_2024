@@ -6,6 +6,7 @@ class Article {
         $this->conn = $db;
     }
 
+    // Ajoutez cette méthode si elle n'existe pas encore
     public function getArticles($offset = 0, $limit = 5) {
         $sql = "SELECT articles.*, categories.nom AS nom_categorie 
                 FROM articles 
@@ -55,6 +56,23 @@ class Article {
 
     public function getCategories() {
         $sql = "SELECT * FROM categories";
+        $result = $this->conn->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getArticlesByCategory($categoryId) {
+        $sql = "SELECT * FROM articles WHERE id_categorie = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $categoryId);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getArticlesGroupedByCategory() {
+        $sql = "SELECT c.nom as categorie, a.id, a.titre, a.contenu 
+                FROM articles a 
+                JOIN categories c ON a.id_categorie = c.id 
+                ORDER BY c.nom";
         $result = $this->conn->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }

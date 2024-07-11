@@ -27,8 +27,9 @@ header .navigation {
     justify-content: center;
     align-items: center;
     padding: 0 20px;
-    background-color: #00509e;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* La couleur de fond est maintenant transparente */
+   
 }
 
 header .navigation ul {
@@ -36,6 +37,7 @@ header .navigation ul {
     margin: 0;
     padding: 0;
     display: flex;
+    
 }
 
 header .navigation li {
@@ -57,6 +59,10 @@ header .navigation li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
 }
+header .navigation li a {
+    background-color: transparent !important;
+}
+
 
 /* Style pour les conteneurs */
 .container {
@@ -186,7 +192,7 @@ button:hover,
     background-color: #002b5c;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     position: relative;
     bottom: 0;
     width: 100%;
