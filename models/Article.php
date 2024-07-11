@@ -76,5 +76,13 @@ class Article {
         $result = $this->conn->query($sql);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    // Ajoutez cette méthode pour récupérer tous les articles
+    public function getAllArticles() {
+        $sql = "SELECT * FROM articles";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

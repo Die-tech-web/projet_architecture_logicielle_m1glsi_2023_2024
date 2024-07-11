@@ -10,17 +10,17 @@ class RestArticleController {
 
     public function getAllArticles($format) {
         $articles = $this->articleModel->getAllArticles();
-        return $this->formatResponse($articles, $format);
+        echo $this->formatResponse($articles, $format);
     }
 
     public function getArticlesGroupedByCategory($format) {
         $articles = $this->articleModel->getArticlesGroupedByCategory();
-        return $this->formatResponse($articles, $format);
+        echo $this->formatResponse($articles, $format);
     }
 
     public function getArticlesByCategory($categoryId, $format) {
         $articles = $this->articleModel->getArticlesByCategory($categoryId);
-        return $this->formatResponse($articles, $format);
+        echo $this->formatResponse($articles, $format);
     }
 
     private function arrayToXml($data, &$xmlData) {
